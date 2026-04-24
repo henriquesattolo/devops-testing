@@ -3,6 +3,8 @@ from calculator import add, subtract, multiply, divide
 import json
 
 class Handler(BaseHTTPRequestHandler):
+
+
     def do_GET(self):
         if self.path == '/health':
             self.send_response(200)
@@ -19,6 +21,7 @@ class Handler(BaseHTTPRequestHandler):
                 "divide": divide(10, 5)
             }
             self.wfile.write(json.dumps(result).encode())
+
 
     def log_message(self, format, *args):
         pass
